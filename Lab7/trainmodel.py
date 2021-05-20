@@ -25,20 +25,20 @@ y = torch.unsqueeze(torch.tensor(y), dim=1)
 lossFunction = torch.nn.MSELoss()
 
 # we create the ANN
-ann = myModel.Net(n_feature=2, n_hidden=120, n_output=1)
+ann = myModel.Net()
 
 
 # we use an optimizer that implements stochastic gradient descent
-optimizer_batch = torch.optim.SGD(ann.parameters(), lr=0.0005)
+optimizer_batch = torch.optim.SGD(ann.parameters(), lr=0.001)
 
 # we memorize the losses forsome graphics
 loss_list = []
 
 # we set up the environment for training in batches
-batch_size = 40
+batch_size = 50
 n_batches = int(len(x) / batch_size)
 
-for epoch in range(5000):
+for epoch in range(2500):
 
     for batch in range(n_batches):
         # we prepare the current batch  -- please observe the slicing for tensors

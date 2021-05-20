@@ -2,7 +2,7 @@ import math
 import random
 
 
-n = 5000
+n = 10000
 pairs = []
 for _ in range(n):
     x = random.random() * 20 - 10
